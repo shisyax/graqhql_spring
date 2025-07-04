@@ -1,0 +1,20 @@
+@startuml C4_Context
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+title System Context diagram Lv1
+
+Person(developer, "開発者", "アプリケーションを開発・テストする")
+Person(client_user, "クライアントユーザー", "一般ユーザー")
+System_Ext(web_client, "Webクライアント", "Web App")
+
+System_Boundary(web_system, "this repository", "Spring Boot + GraphQL"){
+    System_Ext(graphql_system, "Web App", "GraphQLアプリケーション")
+    System_Ext(db, "Database", "永続化")
+}
+
+Rel_R(developer, graphql_system, "開発・テスト", "GraphiQL UI, HTTP/GraphQL")
+Rel(client_user, web_client, "利用")
+Rel(web_client, graphql_system, "GraphQLクエリ", "HTTP/GraphQL")
+Rel_R(graphql_system, db, "データアクセス", "R2DBC")
+HIDE_STEREOTYPE()
+@enduml
