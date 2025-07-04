@@ -1,0 +1,4 @@
+type Query {
+    hello: String
+    fib(n: Int!,start:Int!=1): [Int!]!
+}
