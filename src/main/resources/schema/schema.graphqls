@@ -1,4 +1,13 @@
+
+
 type Query {
     hello: String
     fib(n: Int!,start:Int!=1): [Int!]!
+    user(id: ID!): User
+}
+
+type User {
+    id: ID!
+    name: String!
+    email: String!
 }
