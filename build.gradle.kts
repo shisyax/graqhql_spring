@@ -70,6 +70,9 @@ dependencies {
 	// Database Drivers
 	implementation("com.h2database:h2")
 	implementation("io.r2dbc:r2dbc-h2")
+	// https://mvnrepository.com/artifact/me.yaman.can/spring-boot-webflux-h2-console
+	// github: https://github.com/canyaman/spring-boot-webflux-h2-console/tree/main
+	implementation("me.yaman.can:spring-boot-webflux-h2-console:0.0.1")
 
 	// Development Tools
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
